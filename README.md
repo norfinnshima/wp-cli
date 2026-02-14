@@ -44,3 +44,18 @@ wp config create \
 --dbprefix=testwpcli_ \
 --path=wp
 ```
+
+
+## ◯ wp-setup.sh
+
+* ドキュメントルートとなるディレクトリと同じ場所に配置
+
+### 実行権限を付ける
+```
+chmod +x wp-setup.sh
+```
+
+### 実行
+```
+./wp-setup.sh
+```

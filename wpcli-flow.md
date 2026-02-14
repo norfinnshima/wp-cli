@@ -91,13 +91,12 @@ wp option update blog_public 0 --path=wp
 wp rewrite structure '/%post_id%/' --path=wp
 wp rewrite flush --path=wp
 ```
-* flush は再生成。
+* flush は rewrite ルールを DB に書き込み
 
 ### カラースキーム
 ```
-wp user meta update admin admin_color ectoplasm --path=wp
+wp user meta update $(wp user list --role=administrator --field=user_login --path=wp) admin_color ectoplasm --path=wp
 ```
-※ 'admin' の部分はユーザー名
 
 
 ## ◯ プラグイン
@@ -157,6 +156,7 @@ wp post create \
 ## ◯ 投稿
 
 ### サンプル投稿
+* MacOS 専用
 ```
 for i in {0..4}; do
   wp post create \
