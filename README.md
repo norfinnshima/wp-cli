@@ -1,21 +1,15 @@
-wp-cli
-===
+# wp-cli
 
 ## ◯ Handbook
-
 * https://make.wordpress.org/cli/handbook/
 * https://make.wordpress.org/cli/handbook/guides/verifying-downloads/
 
-
 ## ◯ CLI update
-
 ```
 wp cli update
 ```
 
-
 ## ◯ For use MAMP-MySQL from WP-CLI
-
 ### @~/.zprofile
 ```
 PHP_VERSION=$(ls /Applications/MAMP/bin/php/ | sort -n | tail -1)
@@ -45,9 +39,7 @@ wp config create \
 --path=wp
 ```
 
-
 ## ◯ wp-setup.sh
-
 * ドキュメントルートとなるディレクトリと同じ場所に配置
 
 ### 実行権限を付ける

@@ -1,15 +1,12 @@
-開発環境構築の流れ
-===
+# 開発環境構築の流れ
 
 ## ◯ Download core
-
 * ```--path=wp```をつけると、wpフォルダを作成してその中にダウンロードする 
 ```
 wp core download --path=wp --locale=ja
 ```
 
 ### ▼エラー: PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted
-
 * 一時的にメモリ上限を増やして実行
 ```
 php -d memory_limit=512M $(which wp) core download --path=wp --locale=ja
@@ -17,7 +14,6 @@ php -d memory_limit=512M $(which wp) core download --path=wp --locale=ja
 
 
 ## ◯ Create wp-config
-
 ```
 wp config create \
 --dbname=testwp \
@@ -40,7 +36,6 @@ wp config set WP_DEBUG true --raw --path=wp
 
 
 ## ◯ Install
-
 ```
 wp core install \
 --url=http://testwpcli.test:8888/wp \
@@ -100,7 +95,6 @@ wp user meta update $(wp user list --role=administrator --field=user_login --pat
 
 
 ## ◯ プラグイン
-
 ```
 wp plugin delete hello akismet --path=wp
 
@@ -118,7 +112,6 @@ wp plugin update --all --path=wp
 
 
 ## ◯ テーマ
-
 * アクティブ以外を削除
 ```
 wp theme delete $(wp theme list --status=inactive --field=name --path=wp) --path=wp
@@ -126,7 +119,6 @@ wp theme delete $(wp theme list --status=inactive --field=name --path=wp) --path
 
 
 ## ◯ 固定ページ
-
 ### サンプルページ削除
 ```
 wp post delete $(wp post list --post_type=page --name=sample-page --field=ID --path=wp) --force --path=wp
@@ -154,7 +146,6 @@ wp post create \
 
 
 ## ◯ 投稿
-
 ### サンプル投稿
 * MacOS 専用
 ```
@@ -170,7 +161,6 @@ done
 
 
 ## ◯ ダッシュボード
-
 ```
 wp user meta delete 1 metaboxhidden_dashboard --path=wp
 wp eval '
